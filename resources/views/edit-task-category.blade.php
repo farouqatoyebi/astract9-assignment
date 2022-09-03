@@ -17,7 +17,8 @@
                         @csrf
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" class="form-control" value="{{ $taskCategory->title }}" disabled />
+                            <p class="font-weight-bold">{{ $taskCategory->title }}</p>
+                            <hr>
                         </div>
 
                         <div class="form-group mt-3">
