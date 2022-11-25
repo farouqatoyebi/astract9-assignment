@@ -25,6 +25,12 @@ Route::post('/login', [App\Http\Controllers\LoginController::class, 'processLogi
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index'])->name('register');
 Route::post('/register', [App\Http\Controllers\RegisterController::class, 'processRegister'])->name('processRegister');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/design', function(){
+    return view("random-design");
+});
+Route::get('/waitlist', function(){
+    return view("waitlist-design");
+});
 
 Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/users', [App\Http\Controllers\HomeController::class, 'allUsers'])->name('users');
